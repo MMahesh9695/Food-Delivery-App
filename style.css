@@ -1,4 +1,5 @@
 *{
+    /* Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif; */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
     margin: 0;
@@ -38,6 +39,7 @@ a{
 .restaurants-image-container{
     width: 100%;
     max-height: 10rem;
+    position: relative;
 }
 
 .restaurants-image{
@@ -99,4 +101,12 @@ input:focus,select:focus{
     overflow:hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.restaurants-offer-container{
+    position: absolute;
+    bottom: 8%;
+    width: 75px;
+    background-color: red;
+    color: white;
 }

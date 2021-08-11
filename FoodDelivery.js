@@ -1,5 +1,5 @@
 var restaurantsData = [{id : 1, name : "Anjappar",location:"Tuticorin",openTime:"9:00AM",closeTime:"11:00PM",
-                    ratings:"3.5",offers:"75rs", tags:["South Indian","North Indian"],Image :"https://b.zmtcdn.com/data/pictures/2/19117982/09e7e40ef2591f14cf7649dfe2a4fddf_o2_featured_v2.jpg" },
+                    ratings:"3.5",offers:"75 rs", tags:["South Indian","North Indian"],Image :"https://b.zmtcdn.com/data/pictures/2/19117982/09e7e40ef2591f14cf7649dfe2a4fddf_o2_featured_v2.jpg" },
                     {id : 2, name : "Maris Briyani Stall",location:"Tuticorin",openTime:"1:00PM",closeTime:"11:00PM",
                     ratings:"4.5",offers:"20%", tags:["FastFood","Briyani","South Indian"],Image :"https://b.zmtcdn.com/data/pictures/7/19139147/170ade269bc6ce86772cc23bb0141bd9_o2_featured_v2.jpg"},
                     {id : 3, name : "Karunan Restaurant",location:"Tuticorin",openTime:"11:00AM",closeTime:"11:00PM",
@@ -48,14 +48,26 @@ function getCard(restaurantsList){
     let rootLink = document.createElement('a');
     rootLink.setAttribute('href','#');
     
+    //image
     let imageDiv = document.createElement('div');
+    let _imageDiv = document.createElement('div');
     imageDiv.className="restaurants-image-container";
-
     let imageTag = document.createElement('img');
     imageTag.className="restaurants-image";
     imageTag.setAttribute('src',restaurantsList.Image);
     imageTag.setAttribute('loading','lazy');
-    imageDiv.appendChild(imageTag);
+    _imageDiv.appendChild(imageTag);
+    imageDiv.appendChild(_imageDiv);
+    //Offer
+    if (restaurantsList.offers != ""){
+        let offerDiv = document.createElement('div');
+        offerDiv.className="restaurants-offer-container";
+        let offerTag = document.createElement('div');
+        offerTag.style.textAlign = "right";
+        offerTag.append(restaurantsList.offers+" OFF");
+        offerDiv.appendChild(offerTag);
+        imageDiv.appendChild(offerDiv);
+    }
 
     let restaurantsDetailsDiv = document.createElement('div');
     let restaurantsNameDiv = document.createElement('div');
