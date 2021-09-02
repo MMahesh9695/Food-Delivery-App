@@ -24,7 +24,16 @@ var restaurants = document.querySelector('#restaurants');
 
 btnSearch.addEventListener('click',function(){
     var searchValue = document.querySelector('#txtSearch');
-    findRestaurants(searchValue.value);
+    var searchType = document.querySelector('#ddl_searchType');
+    if(searchType.value == ""){
+        alert("Please select search type");
+    }
+    else if(searchValue.value == ""){
+        alert("Please enter search value");
+    }
+    else{
+        findRestaurants(searchValue.value);
+    }
 });
 
 function findRestaurants(searchValue){
